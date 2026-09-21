@@ -99,17 +99,28 @@ def generate_level(iteration):
 
     # Post-processing
     availableEnemies = 0 # if we remove any enemies, add to the counter and place them at the next available spot
-    for y in range(1, maxY - 1):
-        for x in range(1, maxX - 1):
+    for y in range(0, maxY):
+        for x in range(0, maxX):
             currentTile = level[y][x]
-            tileLeft = level[y][x - 1]
-            tileRight = level[y][x + 1]
-            tileAbove = level[y - 1][x]
-            tileBelow = level[y + 1][x]
-            tileUpLeft = level[y - 1][x - 1]
-            tileUpRight = level[y - 1][x + 1]
-            tileDownLeft = level[y + 1][x - 1]
-            tileDownRight = level[y + 1][x + 1]
+            tileLeft = tileRight = tileAbove = tileBelow = tileUpLeft = tileUpRight = tileDownLeft = tileDownRight = "-"
+
+            if x > 0:
+                tileLeft = level[y][x - 1]
+            if x < maxX - 1:
+                tileRight = level[y][x + 1]
+            if y > 0:
+                tileAbove = level[y - 1][x]
+            if y < maxY:
+                tileBelow = level[y + 1][x]
+            if x > 0 and y > 0:
+                tileUpLeft = level[y - 1][x - 1]
+            if x < maxX - 1 and y > 0:
+                tileUpRight = level[y - 1][x + 1]
+            if x > 0 and y < maxY:
+                tileDownLeft = level[y + 1][x - 1]
+            if x < maxX - 1 and y < maxY:
+                tileDownRight = level[y + 1][x + 1]
+
             # If there is an enemy floating in the air or sitting on top of another enemy, remove it
             if currentTile == "E" and tileBelow in ("-", "E"):
                 level[y] = replaceTile(x, y, "-")
