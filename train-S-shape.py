@@ -49,13 +49,15 @@ for level in levels:  #Looking at one level at a time
             second_right = " "
             third_right = " "
 
-            if x < len(level[y]) - 3:
-                right = level[y][x + 1]
-                second_right = level[y][x + 2]
-                third_right = level[y][x + 3]
+            if x > 0:
+                right = level[y][x - 1]
+            if x > 1:
+                second_right = level[y][x - 2]
+            if x > 2:
+                third_right = level[y][x - 3]
 
             state = right + second_right + third_right
-
+            print(state)
             if not state in markovCounts.keys():
                 markovCounts[state] = {}
             if not level[y][x] in markovCounts[state].keys():
