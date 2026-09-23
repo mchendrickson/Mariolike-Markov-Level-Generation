@@ -16,3 +16,5 @@ To run the code take the following steps:
 5. Make alterations to train.py to alter the state representation of the Markov chain, generate.py to alter the sampling procedure, or visualize.py to alter the visualization procedure including the constructive rules, rereun steps 2-4 to see the impact of these changes
 
 **Please note:** If you are running MacOS, you will need to replace the file load functions with backslashes instead of forward slashes! 
+
+*Generative AI was used extremely minimally, mostly for explaining python's syntax. The overwhelming majority of all code is human authored. No course material was entered into any AI system.*
