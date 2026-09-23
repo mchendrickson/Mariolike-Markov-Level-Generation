@@ -12,7 +12,6 @@ import pickle
 #Load up the probability dictionary(s)
 markovProbabilities_L = pickle.load(open("smbprobabilities_L.pickle", "rb"))
 markovProbabilities_S = pickle.load(open("smbprobabilities_S.pickle", "rb"))
-markovProbabilities = markovProbabilities_L | markovProbabilities_S
 
 level = {}
 
