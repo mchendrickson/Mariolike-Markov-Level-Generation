@@ -9,6 +9,7 @@ import glob
 from PIL import Image  #Need to import this to do image editing
 
 #Load the set of all sprites
+num_levels = 20
 sprites = {}
 for filename in glob.glob(os.path.join(os.getcwd(), "sprites", "*.png")):
     im = Image.open(filename)
@@ -78,6 +79,6 @@ def save_visualization(filename):
     image.save("Generated Level Images" + "\\" + filename + ".jpeg", "JPEG")
 
 
-for i in range(0, 20):
+for i in range(0, num_levels):
     save_visualization("output" + "_" + str(i))
     save_visualization("output_post_processing" + "_" + str(i))
