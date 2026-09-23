@@ -44,20 +44,19 @@ for level in levels:  #Looking at one level at a time
     for y in range(maxY, -1, -1):
         for x in range(0, len(level[y]) - 1):
 
-            #This grabs the tile values to the left (west), below (south), and left and below (southwest)
-            right = " "
-            second_right = " "
-            third_right = " "
+            #This grabs the tile values to the left
+            left = " "
+            second_left = " "
+            third_left = " "
 
             if x > 0:
-                right = level[y][x - 1]
+                left = level[y][x - 1]
             if x > 1:
-                second_right = level[y][x - 2]
+                second_left = level[y][x - 2]
             if x > 2:
-                third_right = level[y][x - 3]
+                third_left = level[y][x - 3]
 
-            state = right + second_right + third_right
-            print(state)
+            state = left + second_left + third_left
             if not state in markovCounts.keys():
                 markovCounts[state] = {}
             if not level[y][x] in markovCounts[state].keys():

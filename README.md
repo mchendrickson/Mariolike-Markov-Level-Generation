@@ -9,10 +9,10 @@ Scripts:
 
 To run the code take the following steps: 
 
-1. Install Python 3.9 (but tweaking it for other versions should be simple) and the 'pickle' library
-2. Run train.py, which will train two Markov chains (a standard straight line shape "S" and an "L" shape) represented as a dictionary of dictionaries based on the levels from Super Mario Bros. (SMB) and Super Mario Bros.: The Lost Levels (SMB2)
-3. Run generate.py, which will generate a level in a tile representation to Generated Levels/output.txt (Warning: this will overwrite any previous generated levels)
-4. (Optionally) run visualize.py, which will visualize the generated level using Kenney's Pixel Platformer assets. This will generate a post-processed version, and a non post-processed version
+1. Install Python 3.9-13 (but tweaking it for other versions should be simple) and the 'pickle' library
+2. Run train.py, which will train two Markov chains (a standard straight line shape "S" and an "L" shape) represented as dictionaries based on the levels from Super Mario Bros. (SMB) and Super Mario Bros.: The Lost Levels (SMB2)
+3. Run generate.py, which will generate a number of levels in a tile representation to Generated Level (Warning: this will overwrite any previous generated levels) This will generate a post-processed version, and a non post-processed version
+4. (Optionally) run visualize.py, which will visualize the generated levels using Kenney's Pixel Platformer assets. 
 5. Make alterations to train.py to alter the state representation of the Markov chain, generate.py to alter the sampling procedure, or visualize.py to alter the visualization procedure including the constructive rules, rereun steps 2-4 to see the impact of these changes
 
 **Please note:** If you are running MacOS, you will need to replace the file load functions with backslashes instead of forward slashes! 

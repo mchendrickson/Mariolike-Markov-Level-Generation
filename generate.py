@@ -111,19 +111,19 @@ def find_states(level, x, y):
     if x > 0 and y < maxY:
         southwest = level[y + 1][x]
 
-    right = " "
-    second_right = " "
-    third_right = " "
+    left = " "
+    second_left = " "
+    third_left = " "
 
     if x > 0:
-        right = level[y][x - 1]
+        left = level[y][x - 1]
     if x > 1:
-        second_right = level[y][x - 2]
+        second_left = level[y][x - 2]
     if x > 2:
-        third_right = level[y][x - 3]
+        third_left = level[y][x - 3]
 
     stateL = west + southwest + south
-    stateS = right + second_right + third_right
+    stateS = left + second_left + third_left
     return stateL, stateS
 
 
